@@ -256,7 +256,7 @@ section.title > .right {
 }
 
 section.title > header, 
-section.title > footer, 
+/* section.title > footer,  */
 section.title::after {
   display: none;;
 }
@@ -621,9 +621,9 @@ section.gray-gradient {
 section.dark-blue {
   --text-color: var(--white);
   --background-color: var(--blue-100);
-  --header-color: var(--blue-30);
-  --footer-color: var(--blue-30);
-  --pagination-color: var(--blue-30);
+  --header-color: var(--white);;
+  --footer-color: var(--white);
+  --pagination-color: var(--white);
   --primary-color: var(--blue-40);
   --secondary-color: var(--blue-50);
   --accent-color: var(--blue-60);
@@ -641,9 +641,9 @@ section.dark-blue {
 section.dark-purple {
   --text-color: var(--white);
   --background-color: #1c0f30;
-  --header-color: #d4bbff;
-  --footer-color: #d4bbff;
-  --pagination-color: #d4bbff;
+  --header-color: var(--white);
+  --footer-color:  var(--white);
+  --pagination-color: var(--white);
   --primary-color: #d4bbff;
   --secondary-color: #be95ff;
   --accent-color: #a56eff;
@@ -661,9 +661,9 @@ section.dark-purple {
 section.dark-green {
   --text-color: var(--white);
   --background-color: #071908;
-  --header-color: #6fdc8c;
-  --footer-color: #6fdc8c;
-  --pagination-color: #6fdc8c;
+  --header-color: var(--white);
+  --footer-color: var(--white);
+  --pagination-color: var(--white);
   --primary-color: #6fdc8c;
   --secondary-color: #42be65;
   --accent-color: #24a148;

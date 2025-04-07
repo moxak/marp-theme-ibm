@@ -439,7 +439,48 @@ function toggleDarkMode() {
 # Thnaks.
 
 ## カラフルで印象的なプレゼンテーションを
-
 ---
 
 <!-- _class: logo -->
+logo /default
+
+---
+
+<!-- _class: logo cool-gray -->
+logo /cool-gray/warm-gray
+
+---
+
+<!-- _class: logo dark-green -->
+logo /dark-blue, dark-green, dark-purple
+
+---
+
+<!-- _class: logo-rebus -->
+logo-rebus /default
+
+---
+
+<!-- _class: logo-rebus cool-gray -->
+logo-rebus /cool-gray/warm-gray
+
+---
+
+<!-- _class: logo-rebus dark-green -->
+logo-rebus /dark-blue, dark-green, dark-purple
+
+---
+
+<!-- _class: logo-rebus-v -->
+logo-rebus-v /default
+
+---
+
+<!-- _class: logo-rebus-v cool-gray -->
+logo-rebus-v cool-gray/warm-gray
+
+---
+
+<!-- _class: logo-rebus-v dark-green -->
+logo-rebus-v /dark-blue, dark-green, dark-purple
+

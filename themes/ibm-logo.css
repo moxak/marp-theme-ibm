@@ -4,7 +4,7 @@
 
 footer {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   padding: 10px 10px 0px 0px;
 }
@@ -13,65 +13,105 @@ footer {
 footer::before {
   content: '';
   display: block;
-  margin-right: 10px;
   width: 100px;
-  height: 60px;
-  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.png');
-  background-size: contain;
+  height: 100px;
+  background-size: auto 100px; /* 必要に応じて調整 */
+  background-position: -30px 30px; /* 左から180px、上から80pxの部分を開始点に */
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo%C2%AE_pos_blue60_RGB.png');
   background-repeat: no-repeat;
 }
 
+section.cool-gray > footer::before,
+section.warm-gray > footer::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo%C2%AE_pos_RGB.png');
+}
+
+
 /* 白背景以外のスライドでは白色のロゴに切り替え */
-section.primary::after,
-section.dark-blue::after,
-section.dark-purple::after,
-section.dark-green::after {
-  background-image: url('./assets/IBM_logo®_pos_RGB.png');
+section.primary > footer::before,
+section.dark-blue > footer::before,
+section.dark-purple > footer::before,
+section.dark-green > footer::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo%C2%AE_rev_RGB.png');
 }
 
 /* リードスライド（タイトルスライド）用の大きなロゴ */
 section.logo,
-section.logo-rebus {
+section.logo-rebus,
+section.logo-rebus-v {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Defalt(LIGHT) */
 section.logo::before,
-section.logo-rebus::before {
+section.logo-rebus::before,
+section.logo-rebus-v::before {
   content: '';
   display: block;
-  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.png');
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo®_pos_blue60_RGB.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 40%;
+  width: 80%;
   height: 100%;
 }
 
+/* Horizontal Rebus */
 section.logo-rebus::before {
-  background-image: url('./assets/IBM_rebus_h_rev_blue50_RGB.png');
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_h_pos_blue60_RGB.png');
 }
 
-/* 白背景以外のリードスライドでは白色のロゴに切り替え */
+/* Vertical Rebus */
+section.logo-rebus-v::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_v_pos_blue60_RGB.png');
+}
+
+/* DARK */
 section.logo.primary::before,
 section.logo.dark-blue::before,
 section.logo.dark-purple::before,
 section.logo.dark-green::before {
-  background-image: url('./assets/IBM_logo®_pos_RGB.png');
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo®_rev_RGB.png');
 }
 
 section.logo-rebus.primary::before,
 section.logo-rebus.dark-blue::before,
 section.logo-rebus.dark-purple::before,
 section.logo-rebus.dark-green::before {
-  background-image: url('./assets/IBM_rebus_h_rev_RGB.png');
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_h_rev_white_RGB.png');
+}
+
+section.logo-rebus-v.primary::before,
+section.logo-rebus-v.dark-blue::before,
+section.logo-rebus-v.dark-purple::before,
+section.logo-rebus-v.dark-green::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_v_rev_white_RGB.png');
+}
+
+/* GRAY */
+section.logo.cool-gray::before,
+section.logo.warm-gray::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_logo®_pos_RGB.png');
+}
+
+
+section.logo-rebus.cool-gray::before,
+section.logo-rebus.warm-gray::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_h_pos_black_RGB.png');
+}
+
+section.logo-rebus-v.cool-gray::before,
+section.logo-rebus-v.warm-gray::before {
+  background-image: url('https://raw.githubusercontent.com/moxak/marp-theme-ibm/refs/heads/main/themes/assets/IBM_rebus_v_pos_black_RGB.png');
 }
 
 section.logo > header,
 section.logo > footer,
 section.logo-rebus > header,
-section.logo-rebus > footer {
+section.logo-rebus > footer,
+section.logo-rebus-v > header,
+section.logo-rebus-v > footer {
   display: none;
 }
-
