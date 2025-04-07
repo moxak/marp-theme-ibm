@@ -18,9 +18,9 @@ footer: '© 2025 IBM Corporation. All rights reserved.'
   <div class="profile">
     <img src="https://avatars.githubusercontent.com/u/54477647?s=400&u=933d42c82fd2126c0c149410ba06fe7ac7d42ad0&v=4"/>
     <div class="content">
-      <div class="name">Bunzo Akama</div>
-      <div class="job-title">IT Specialist - Data Science Lab., DX Solution Center</div>
-      <div class="company">IBM Systems Engineering</div>
+      <div class="name">Moxak</div>
+      <div class="job-title">Data Scientist</div>
+      <div class="company">IBM Corporation</div>
     </div>
   </div>
 
