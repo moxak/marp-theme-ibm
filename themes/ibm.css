@@ -1,0 +1,678 @@
+/* @theme ibm */
+/* IBM color palette based unified theme for Marp */
+@import "default";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;300;400;600&family=IBM+Plex+Mono&display=swap');
+
+:root {
+  /* Common colors from IBM palette */
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #161616;
+  --gray-90: #262626;
+  --gray-80: #393939;
+  --gray-70: #525252;
+  --gray-60: #6f6f6f;
+  --gray-50: #8d8d8d;
+  --gray-40: #a8a8a8;
+  --gray-30: #c6c6c6;
+  --gray-20: #e0e0e0;
+  --gray-10: #f4f4f4;
+  
+  /* Alert colors */
+  --alert-red: #da1e28;
+  --alert-green: #24a148;
+  --alert-orange: #ff832b;
+  --alert-yellow: #f1c21b;
+  
+  /* Blue palette (default) */
+  --blue-100: #001141;
+  --blue-90: #001d6c;
+  --blue-80: #002d9c;
+  --blue-70: #0043ce;
+  --blue-60: #0f62fe;
+  --blue-50: #4589ff;
+  --blue-40: #78a9ff;
+  --blue-30: #a6c8ff;
+  --blue-20: #d0e2ff;
+  --blue-10: #edf5ff;
+  
+  /* Theme defaults (blue) */
+  --primary-color: var(--blue-80);
+  --secondary-color: var(--blue-70);
+  --accent-color: var(--blue-60);
+  --link-color: var(--blue-60);
+  --blockquote-border: var(--blue-50);
+  --blockquote-bg: var(--blue-10);
+  --blockquote-color: rgba(--gray-80, 0.8);
+  --mark-background: var(--blue-20);
+  --table-header-bg: var(--blue-60);
+  --table-row-odd-bg: var(--blue-10);
+  --code-border: var(--blue-50);
+  --heading-border: var(--blue-40);
+  
+  /* Base theme variables */
+  --main-font: 'IBM Plex Sans JP', sans-serif;
+  --code-font: 'IBM Plex Mono', monospace;
+  --text-color: var(--gray-100);
+  --background-color: var(--white);
+  --header-color: var(--gray-60);
+  --footer-color: var(--gray-60);
+  --table-header-color: var(--white);
+  --pagination-color: var(--gray-60);
+}
+
+/* Base styles - TOP ALIGNED */
+section {
+  font-family: var(--main-font);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 40px;
+  padding-top: 70px; 
+  justify-content: flex-start; /* 上揃えにする */
+  align-items: flex-start; /* 上揃えにする */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  align-self: flex-start;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--heading-border);
+  padding-bottom: 0.2em;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-size: 1.0em;
+  color: var(--accent-color);
+}
+
+/* Header and footer */
+header {
+  font-size: 0.7em;
+  color: var(--header-color);
+  border-bottom: 1px solid var(--gray-30);
+  padding-bottom: 5px;
+}
+
+footer {
+  font-size: 0.5em;
+  color: var(--footer-color);
+  padding-top: 5px;
+}
+
+header::after {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Code blocks */
+code {
+  font-family: var(--code-font);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 0.7em;
+}
+
+pre {
+  font-family: var(--code-font);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 1em;
+  border-left: 4px solid var(--code-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+section::after {
+  font-size: 0.7em;
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  color: var(--pagination-color);
+}
+
+/* Images */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Blockquotes */
+blockquote {
+  background: var(--blockquote-bg);
+  border-left: 5px solid var(--blockquote-border);
+  margin: 1em 0;
+  padding: 0.8em 1em;
+  font-style: italic;
+  color: var(--blockquote-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Highlighted text */
+mark {
+  background-color: var(--mark-background);
+  padding: 0 2px;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.7em;
+  min-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-color);
+  font-weight: bold;
+  padding: 0.75em;
+  text-align: left;
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid var(--gray-20);
+}
+
+tr:nth-child(even) {
+  background-color: var(--table-row-odd-bg);
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 1em;
+  padding-left: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* Title slide */
+section.title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+  height: 100vh;
+  /* font-family: var(--code-font); */
+  font-weight: 300;
+}
+
+section.title > .left, 
+section.title > .right {
+  height: 100vh; /* ビューポート高さいっぱいに */
+  box-sizing: border-box; /* パディングやボーダーを含めて計算 */
+  overflow: hidden; /* はみ出し部分を隠す */
+}
+
+section.title > .left {
+  padding: 3rem 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+section.title > .right {
+  background-color: var(--blue-30);
+  position: relative;
+}
+
+section.title > header, 
+section.title > footer, 
+section.title::after {
+  display: none;;
+}
+
+section.title > .left > h1 {
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 2.2em;
+  border-bottom: none;
+  margin-bottom: 0.1em;
+  color: var(--primary-color);
+}
+
+section.title > .left > h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--gray-70);
+}
+
+section.title > .left > h3 {
+  font-size: 1em;
+  font-weight: 100;
+  color: var(--gray-70);
+  align-self: center;
+}
+
+/* 右側のイラスト内部 */
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像がある場合はカバーするように */
+  background-color: #f4f4f4;
+}
+
+/* Date */
+.date {
+  font-style: italic;
+  font-size: 0.8em;
+  color: var(--gray-70);
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  padding: 1em 0;
+  margin: 0;
+  align-items: center;
+}
+.profile > .content > .name,
+.profile > .content > .job-title,
+.profile > .content > .company {
+  font-family: var(--main-font);
+  font-size: 0.8em;
+  font-weight: 300;
+  color: var(--gray-100);
+}
+
+.profile > .content > .name {
+  font-weight: 600;
+}
+
+.profile > img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--gray-20);
+  box-sizing: border-box;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1em;
+  margin: 0 1em 0 0;
+}
+
+
+/* Lead slide */
+section.lead {
+  text-align: center;
+  padding-top: 80px;
+  display: block;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 中央揃え */
+}
+
+section.lead header {
+  display: none; /* headerを非表示 */
+}
+
+section.lead footer {
+  display: none; /* footerを非表示 */
+}
+
+section.lead h1 {
+  font-size: 3em;
+  border-bottom: none;
+  margin-bottom: 0.1em;
+  align-self: center;
+  text-align: center;
+}
+
+section.lead h2 {
+  font-size: 1.5em;
+  color: var(--gray-70);
+  align-self: center;
+  text-align: center;
+}
+
+/* Primary gradient background section */
+section.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+section.primary h1,
+section.primary h2,
+section.primary h3 {
+  color: var(--white);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+section.primary a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+section.primary code {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+section.primary::after,
+section.primary footer,
+section.primary header {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Two-column layout */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Small text for references */
+section.smalltext > div,
+section.smalltext > p,
+section.smalltext > ul,
+section.smalltext > ol,
+section.smalltext > blockquote {
+  font-size: 0.8em;
+}
+
+/* Tiny text for references */
+section.tinytext > div,
+section.tinytext > p,
+section.tinytext > ul,
+section.tinytext > ol,
+section.tinytext > blockquote {
+  font-size: 0.65em;
+}
+
+/* Helper classes for alignment */
+.center-text {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ======= COLOR VARIANTS ======= */
+
+/* || SECTION CLASS: red */
+section.red {
+  --primary-color: #750e13;
+  --secondary-color: #a2191f;
+  --accent-color: #da1e28;
+  --link-color: #da1e28;
+  --blockquote-border: #fa4d56;
+  --blockquote-bg: #fff1f1;
+  --mark-background: #ffd7d9;
+  --table-header-bg: #a2191f;
+  --table-row-odd-bg: #fff1f1;
+  --code-border: #fa4d56;
+  --heading-border: #ff8389;
+}
+
+/* || SECTION CLASS: green */
+section.green {
+  --primary-color: #044317;
+  --secondary-color: #0e6027;
+  --accent-color: #198038;
+  --link-color: #198038;
+  --blockquote-border: #24a148;
+  --blockquote-bg: #defbe6;
+  --mark-background: #a7f0ba;
+  --table-header-bg: #0e6027;
+  --table-row-odd-bg: #defbe6;
+  --code-border: #24a148;
+  --heading-border: #42be65;
+}
+
+/* || SECTION CLASS: purple */
+section.purple {
+  --primary-color: #491d8b;
+  --secondary-color: #6929c4;
+  --accent-color: #8a3ffc;
+  --link-color: #6929c4;
+  --blockquote-border: #a56eff;
+  --blockquote-bg: #f6f2ff;
+  --mark-background: #e8daff;
+  --table-header-bg: #6929c4;
+  --table-row-odd-bg: #f6f2ff;
+  --code-border: #a56eff;
+  --heading-border: #be95ff;
+}
+
+/* || SECTION CLASS: teal */
+section.teal {
+  --primary-color: #004144;
+  --secondary-color: #005d5d;
+  --accent-color: #007d79;
+  --link-color: #007d79;
+  --blockquote-border: #009d9a;
+  --blockquote-bg: #d9fbfb;
+  --mark-background: #9ef0f0;
+  --table-header-bg: #005d5d;
+  --table-row-odd-bg: #d9fbfb;
+  --code-border: #009d9a;
+  --heading-border: #08bdba;
+}
+
+/* || SECTION CLASS: magenta */
+section.magenta {
+  --primary-color: #740937;
+  --secondary-color: #9f1853;
+  --accent-color: #d02670;
+  --link-color: #d02670;
+  --blockquote-border: #ee5396;
+  --blockquote-bg: #fff0f7;
+  --mark-background: #ffd6e8;
+  --table-header-bg: #9f1853;
+  --table-row-odd-bg: #fff0f7;
+  --code-border: #ee5396;
+  --heading-border: #ff7eb6;
+}
+
+/* || SECTION CLASS: cyan */
+section.cyan {
+  --primary-color: #003a6d;
+  --secondary-color: #00539a;
+  --accent-color: #0072c3;
+  --link-color: #0072c3;
+  --blockquote-border: #1192e8;
+  --blockquote-bg: #e5f6ff;
+  --mark-background: #bae6ff;
+  --table-header-bg: #00539a;
+  --table-row-odd-bg: #e5f6ff;
+  --code-border: #1192e8;
+  --heading-border: #33b1ff;
+}
+
+/* || SECTION CLASS: gray */
+section.gray {
+  --primary-color: #393939;
+  --secondary-color: #525252;
+  --accent-color: #6f6f6f;
+  --link-color: #0f62fe; /* 青色を維持 */
+  --blockquote-border: #8d8d8d;
+  --blockquote-bg: #f4f4f4;
+  --mark-background: #e0e0e0;
+  --table-header-bg: #525252;
+  --table-row-odd-bg: #f4f4f4;
+  --code-border: #8d8d8d;
+  --heading-border: #a8a8a8;
+}
+
+/* || SECTION CLASS: warm-gray */
+section.warm-gray {
+  --primary-color: #3c3838;
+  --secondary-color: #565151;
+  --accent-color: #726e6e;
+  --link-color: #0f62fe; /* 青色を維持 */
+  --blockquote-border: #8f8b8b;
+  --blockquote-bg: #f7f3f2;
+  --mark-background: #e5e0df;
+  --table-header-bg: #565151;
+  --table-row-odd-bg: #f7f3f2;
+  --code-border: #8f8b8b;
+  --heading-border: #ada8a8;
+}
+
+/* || SECTION CLASS: cool-gray */
+section.cool-gray {
+  --primary-color: #343a3f;
+  --secondary-color: #4d5358;
+  --accent-color: #697077;
+  --link-color: #0f62fe; /* 青色を維持 */
+  --blockquote-border: #878d96;
+  --blockquote-bg: #f2f4f8;
+  --mark-background: #dde1e6;
+  --table-header-bg: #4d5358;
+  --table-row-odd-bg: #f2f4f8;
+  --code-border: #878d96;
+  --heading-border: #a2a9b0;
+}
+
+/* ======= GRADIENT BACKGROUND VARIANTS ======= */
+
+/* || SECTION CLASS: blue-gradient */
+section.blue-gradient {
+  background-image: linear-gradient(120deg, var(--blue-10) 0%, var(--blue-30) 100%);
+}
+
+/* || SECTION CLASS: red-gradient */
+section.red-gradient {
+  background-image: linear-gradient(120deg, #fff1f1 0%, #ffb3b8 100%);
+}
+
+/* || SECTION CLASS: green-gradient */
+section.green-gradient {
+  background-image: linear-gradient(120deg, #defbe6 0%, #6fdc8c 100%);
+}
+
+/* || SECTION CLASS: purple-gradient */
+section.purple-gradient {
+  background-image: linear-gradient(120deg, #f6f2ff 0%, #d4bbff 100%);
+}
+
+/* || SECTION CLASS: teal-gradient */
+section.teal-gradient {
+  background-image: linear-gradient(120deg, #d9fbfb 0%, #3ddbd9 100%);
+}
+
+/* || SECTION CLASS: magenta-gradient */
+section.magenta-gradient {
+  background-image: linear-gradient(120deg, #fff0f7 0%, #ffafd2 100%);
+}
+
+/* || SECTION CLASS: cyan-gradient */
+section.cyan-gradient {
+  background-image: linear-gradient(120deg, #e5f6ff 0%, #82cfff 100%);
+}
+
+/* || SECTION CLASS: gray-gradient */
+section.gray-gradient {
+  background-image: linear-gradient(120deg, #f4f4f4 0%, #c6c6c6 100%);
+}
+
+/* ======= DARK THEMES ======= */
+
+/* || SECTION CLASS: dark-blue */
+section.dark-blue {
+  --text-color: var(--white);
+  --background-color: var(--blue-100);
+  --header-color: var(--blue-30);
+  --footer-color: var(--blue-30);
+  --pagination-color: var(--blue-30);
+  --primary-color: var(--blue-40);
+  --secondary-color: var(--blue-50);
+  --accent-color: var(--blue-60);
+  --link-color: var(--blue-40);
+  --blockquote-border: var(--blue-60);
+  --blockquote-bg: rgba(15, 98, 254, 0.2);
+  --mark-background: rgba(70, 137, 255, 0.3);
+  --table-header-bg: var(--blue-70);
+  --table-row-odd-bg: rgba(0, 29, 156, 0.3);
+  --code-border: var(--blue-60);
+  --heading-border: var(--blue-60);
+}
+
+/* || SECTION CLASS: dark-purple */
+section.dark-purple {
+  --text-color: var(--white);
+  --background-color: #1c0f30;
+  --header-color: #d4bbff;
+  --footer-color: #d4bbff;
+  --pagination-color: #d4bbff;
+  --primary-color: #d4bbff;
+  --secondary-color: #be95ff;
+  --accent-color: #a56eff;
+  --link-color: #be95ff;
+  --blockquote-border: #8a3ffc;
+  --blockquote-bg: rgba(138, 63, 252, 0.2);
+  --mark-background: rgba(165, 110, 255, 0.3);
+  --table-header-bg: #6929c4;
+  --table-row-odd-bg: rgba(49, 19, 94, 0.3);
+  --code-border: #8a3ffc;
+  --heading-border: #8a3ffc;
+}
+
+/* || SECTION CLASS: dark-green */
+section.dark-green {
+  --text-color: var(--white);
+  --background-color: #071908;
+  --header-color: #6fdc8c;
+  --footer-color: #6fdc8c;
+  --pagination-color: #6fdc8c;
+  --primary-color: #6fdc8c;
+  --secondary-color: #42be65;
+  --accent-color: #24a148;
+  --link-color: #6fdc8c;
+  --blockquote-border: #198038;
+  --blockquote-bg: rgba(25, 128, 56, 0.2);
+  --mark-background: rgba(36, 161, 72, 0.3);
+  --table-header-bg: #0e6027;
+  --table-row-odd-bg: rgba(2, 45, 13, 0.3);
+  --code-border: #198038;
+  --heading-border: #198038;
+}
