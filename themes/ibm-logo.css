@@ -16,7 +16,7 @@ footer::before {
   margin-right: 10px;
   width: 100px;
   height: 60px;
-  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.eps');
+  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -26,7 +26,7 @@ section.primary::after,
 section.dark-blue::after,
 section.dark-purple::after,
 section.dark-green::after {
-  background-image: url('./assets/IBM_logo®_pos_RGB.eps');
+  background-image: url('./assets/IBM_logo®_pos_RGB.png');
 }
 
 /* リードスライド（タイトルスライド）用の大きなロゴ */
@@ -41,7 +41,7 @@ section.logo::before,
 section.logo-rebus::before {
   content: '';
   display: block;
-  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.eps');
+  background-image: url('./assets/IBM_logo®_pos_blue60_RGB.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -50,7 +50,7 @@ section.logo-rebus::before {
 }
 
 section.logo-rebus::before {
-  background-image: url('./assets/IBM_rebus_h_rev_blue50_RGB.eps');
+  background-image: url('./assets/IBM_rebus_h_rev_blue50_RGB.png');
 }
 
 /* 白背景以外のリードスライドでは白色のロゴに切り替え */
@@ -58,14 +58,14 @@ section.logo.primary::before,
 section.logo.dark-blue::before,
 section.logo.dark-purple::before,
 section.logo.dark-green::before {
-  background-image: url('./assets/IBM_logo®_pos_RGB.eps');
+  background-image: url('./assets/IBM_logo®_pos_RGB.png');
 }
 
 section.logo-rebus.primary::before,
 section.logo-rebus.dark-blue::before,
 section.logo-rebus.dark-purple::before,
 section.logo-rebus.dark-green::before {
-  background-image: url('./assets/IBM_rebus_h_rev_RGB.eps');
+  background-image: url('./assets/IBM_rebus_h_rev_RGB.png');
 }
 
 section.logo > header,
